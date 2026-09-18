@@ -3,1038 +3,506 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Happy 18th Birthday Pragna 💜</title>
 
 <style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:radial-gradient(circle at top,#8f6bd1 0%,#4b2875 45%,#160b2b 100%);
+  color:white;min-height:100vh;overflow-x:hidden;
 }
 
-html {
-    scroll-behavior: smooth;
+/* Moving hearts */
+.hearts-container{
+  position:fixed;inset:0;width:100%;height:100%;
+  overflow:hidden;pointer-events:none;z-index:1;
+}
+.heart{
+  position:absolute;bottom:-80px;color:#ffb6e6;font-size:25px;opacity:.85;
+  animation:floatHeart linear infinite;
+  filter:drop-shadow(0 0 8px #ff9ddd) drop-shadow(0 0 15px rgba(255,130,220,.7));
+}
+@keyframes floatHeart{
+  0%{transform:translateY(0) translateX(0) rotate(0) scale(.7);opacity:0}
+  10%{opacity:.9}
+  25%{transform:translateY(-25vh) translateX(35px) rotate(15deg) scale(1)}
+  50%{transform:translateY(-50vh) translateX(-40px) rotate(-15deg) scale(1.1)}
+  75%{transform:translateY(-75vh) translateX(45px) rotate(15deg) scale(.9)}
+  100%{transform:translateY(-120vh) translateX(-30px) rotate(-20deg) scale(.7);opacity:0}
 }
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: radial-gradient(circle at top, #936bd1, #4b2875 45%, #160b2b 100%);
-    color: white;
-    min-height: 100vh;
-    overflow-x: hidden;
+/* Sparkles */
+.sparkles-container{position:fixed;inset:0;pointer-events:none;z-index:2}
+.sparkle{
+  position:absolute;color:white;animation:sparkleAnimation 2s ease-in-out infinite;
+  text-shadow:0 0 5px white,0 0 12px #e7c6ff;
+}
+@keyframes sparkleAnimation{
+  0%,100%{opacity:.2;transform:scale(.6)}
+  50%{opacity:1;transform:scale(1.4)}
 }
 
+.content{position:relative;z-index:5}
 
-/* ================= MOVING HEARTS ================= */
-
-.hearts-container {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 1;
+/* Hero */
+.hero{
+  min-height:100vh;display:flex;justify-content:center;align-items:center;
+  text-align:center;padding:30px 20px;
+}
+.hero-content{max-width:850px;width:100%;animation:heroAppear 1.5s ease}
+@keyframes heroAppear{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.hero-photo{
+  width:230px;height:230px;object-fit:cover;border-radius:50%;
+  border:6px solid rgba(255,255,255,.8);
+  box-shadow:0 0 20px #e8c9ff,0 0 50px rgba(220,170,255,.8),0 0 100px rgba(220,170,255,.4);
+  animation:photoFloat 4s ease-in-out infinite;
+}
+@keyframes photoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.small-title{
+  margin-top:35px;font-size:1.2rem;letter-spacing:4px;text-transform:uppercase;color:#f4dfff;
+}
+.big-number{
+  font-size:clamp(100px,22vw,190px);font-weight:900;line-height:.9;margin:10px 0;
+  background:linear-gradient(135deg,#fff,#e9c5ff,#ffb5e8);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 20px rgba(255,255,255,.5)) drop-shadow(0 0 40px rgba(236,178,255,.7));
+  animation:numberGlow 2s ease-in-out infinite;
+}
+@keyframes numberGlow{
+  0%,100%{filter:drop-shadow(0 0 15px rgba(255,255,255,.4)) drop-shadow(0 0 35px rgba(236,178,255,.6))}
+  50%{filter:drop-shadow(0 0 30px rgba(255,255,255,.8)) drop-shadow(0 0 70px rgba(236,178,255,.9))}
+}
+.name{
+  font-size:clamp(45px,10vw,85px);font-weight:700;color:white;
+  text-shadow:0 0 10px #fff,0 0 25px #e5b9ff,0 0 45px #c88cff;
+}
+.subtitle{font-size:1.25rem;margin-top:20px;color:#f5e8ff}
+.surprise-button{
+  margin-top:40px;padding:16px 30px;border:none;border-radius:40px;
+  background:linear-gradient(135deg,#fff,#edc9ff,#d28cff);
+  color:#3b185c;font-size:1.05rem;font-weight:bold;cursor:pointer;
+  box-shadow:0 0 15px rgba(255,255,255,.6),0 0 35px rgba(220,150,255,.7);
+  transition:.3s;
+}
+.surprise-button:hover{
+  transform:scale(1.08);box-shadow:0 0 25px white,0 0 60px #df9fff;
 }
 
-.heart {
-    position: absolute;
-    bottom: -70px;
-    color: #ffb6e6;
-    font-size: 25px;
-    opacity: 0.9;
+/* Letter */
+.letter-section{padding:100px 20px;display:flex;justify-content:center}
+.letter-card{
+  max-width:800px;width:100%;padding:45px 35px;
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.25);
+  border-radius:30px;backdrop-filter:blur(12px);
+  box-shadow:0 20px 70px rgba(0,0,0,.25),0 0 30px rgba(220,170,255,.2);
+  animation:cardFloat 5s ease-in-out infinite;
+}
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.section-title{text-align:center;font-size:clamp(30px,6vw,48px);margin-bottom:30px;color:#ffe9ff}
+.letter-text{font-size:1.1rem;line-height:1.9;color:#f8eaff;text-align:center}
 
-    animation-name: floatHeart;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+/* Reasons */
+.reasons-section{padding:80px 20px}
+.reasons-container{max-width:900px;margin:auto}
+.reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.reason{
+  padding:25px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.2);
+  border-radius:20px;text-align:center;backdrop-filter:blur(8px);transition:.3s;
+}
+.reason:hover{
+  transform:translateY(-8px) scale(1.02);background:rgba(255,255,255,.15);
+  box-shadow:0 0 30px rgba(231,174,255,.3);
+}
+.reason-number{font-size:2rem;font-weight:bold;color:#f0c7ff;margin-bottom:10px}
+.reason-text{line-height:1.6;color:#f9eaff}
 
-    filter:
-        drop-shadow(0 0 8px #ff9ddd)
-        drop-shadow(0 0 15px rgba(255,130,220,0.7));
+/* Memories */
+#memories-section{padding:100px 20px;text-align:center}
+.memories-subtitle{color:#ead7ff;margin-bottom:35px;font-size:1.1rem}
+.memory-card{
+  max-width:650px;margin:auto;padding:25px;border-radius:30px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 70px rgba(0,0,0,.3),0 0 40px rgba(222,163,255,.25);
+  transition:.4s;
+}
+.memory-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 25px 80px rgba(0,0,0,.35),0 0 60px rgba(231,170,255,.45);
+}
+.memory-image{
+  width:100%;max-height:550px;object-fit:contain;border-radius:22px;
+  background:rgba(0,0,0,.15);box-shadow:0 0 25px rgba(255,255,255,.2);
+  animation:memoryImageAppear .6s ease;
+}
+@keyframes memoryImageAppear{
+  from{opacity:0;transform:scale(.94)}
+  to{opacity:1;transform:scale(1)}
+}
+.memory-message{
+  margin-top:25px;font-size:1.15rem;line-height:1.8;color:#fff1ff;
+  min-height:90px;display:flex;align-items:center;justify-content:center;
+}
+.memory-controls{
+  margin-top:25px;display:flex;justify-content:center;align-items:center;
+  gap:15px;flex-wrap:wrap;
+}
+.memory-button{
+  padding:12px 22px;border:1px solid rgba(255,255,255,.35);border-radius:30px;
+  background:rgba(255,255,255,.12);color:white;cursor:pointer;font-size:1rem;transition:.3s;
+}
+.memory-button:hover{background:rgba(255,255,255,.25);transform:scale(1.05)}
+.memory-count{font-weight:bold;color:#f5d9ff;min-width:100px}
+.memory-dots{display:flex;justify-content:center;gap:8px;margin-top:20px}
+.memory-dot{
+  width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35);transition:.3s;cursor:pointer;
+}
+.memory-dot.active{
+  width:25px;border-radius:10px;background:#ffd4f7;box-shadow:0 0 10px #ffd4f7;
 }
 
-@keyframes floatHeart {
-
-    0% {
-        transform:
-            translateY(0)
-            translateX(0)
-            rotate(0deg)
-            scale(0.7);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 0.9;
-    }
-
-    30% {
-        transform:
-            translateY(-30vh)
-            translateX(45px)
-            rotate(20deg)
-            scale(1);
-    }
-
-    60% {
-        transform:
-            translateY(-65vh)
-            translateX(-45px)
-            rotate(-20deg)
-            scale(1.1);
-    }
-
-    100% {
-        transform:
-            translateY(-120vh)
-            translateX(35px)
-            rotate(20deg)
-            scale(0.8);
-        opacity: 0;
-    }
+/* Final */
+.final-section{padding:120px 20px;text-align:center}
+.final-card{
+  max-width:750px;margin:auto;padding:50px 30px;background:rgba(255,255,255,.10);
+  border-radius:30px;border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(12px);
+  box-shadow:0 20px 70px rgba(0,0,0,.3),0 0 50px rgba(224,168,255,.25);
+}
+.final-card h2{font-size:clamp(35px,7vw,60px);color:#ffeaff;margin-bottom:25px}
+.final-card p{font-size:1.15rem;line-height:1.8;color:#f8e8ff}
+.final-heart{
+  font-size:60px;margin-top:25px;display:inline-block;animation:heartBeat 1.2s infinite;
+  filter:drop-shadow(0 0 10px #ffb4ed) drop-shadow(0 0 25px #ff82d6);
+}
+@keyframes heartBeat{
+  0%,100%{transform:scale(1)}
+  25%{transform:scale(1.2)}
+  50%{transform:scale(1)}
+  75%{transform:scale(1.15)}
 }
 
-
-/* ================= SPARKLES ================= */
-
-.sparkles-container {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 2;
+/* Confetti */
+.confetti{
+  position:fixed;width:10px;height:10px;top:-20px;z-index:100;pointer-events:none;
+  animation:confettiFall linear forwards;
+}
+@keyframes confettiFall{
+  0%{transform:translateY(0) rotate(0);opacity:1}
+  100%{transform:translateY(110vh) rotate(720deg);opacity:0}
 }
 
-.sparkle {
-    position: absolute;
-    color: white;
-    animation: sparkleAnimation 2s ease-in-out infinite;
-    text-shadow: 0 0 10px white, 0 0 20px #e7c6ff;
+/* Mobile */
+@media(max-width:600px){
+  .hero{padding-top:50px}
+  .hero-photo{width:190px;height:190px}
+  .small-title{font-size:.9rem}
+  .subtitle{font-size:1rem}
+  .letter-card{padding:30px 20px}
+  .memory-card{padding:15px}
+  .memory-message{font-size:1rem;min-height:120px}
+  .reason{padding:20px}
+  .heart{font-size:20px}
 }
-
-@keyframes sparkleAnimation {
-
-    0%,100% {
-        opacity: 0.2;
-        transform: scale(0.6);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.4);
-    }
-}
-
-
-/* ================= CONTENT ================= */
-
-.content {
-    position: relative;
-    z-index: 5;
-}
-
-
-/* ================= HERO ================= */
-
-.hero {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px 20px;
-}
-
-.hero-content {
-    max-width: 850px;
-    width: 100%;
-}
-
-.hero-photo {
-    width: 230px;
-    height: 230px;
-    object-fit: cover;
-    border-radius: 50%;
-
-    border: 6px solid rgba(255,255,255,0.85);
-
-    box-shadow:
-        0 0 20px #e8c9ff,
-        0 0 50px rgba(220,170,255,0.8),
-        0 0 100px rgba(220,170,255,0.4);
-
-    animation: photoFloat 4s ease-in-out infinite;
-}
-
-@keyframes photoFloat {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-.small-title {
-    margin-top: 35px;
-    font-size: 1.2rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #f4dfff;
-}
-
-.big-number {
-    font-size: clamp(100px,22vw,190px);
-    font-weight: 900;
-    line-height: 0.9;
-    margin: 10px 0;
-
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #e9c5ff,
-        #ffb5e8
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    filter: drop-shadow(0 0 30px rgba(236,178,255,0.8));
-}
-
-.name {
-    font-size: clamp(45px,10vw,85px);
-    font-weight: 700;
-
-    color: white;
-
-    text-shadow:
-        0 0 10px #fff,
-        0 0 25px #e5b9ff,
-        0 0 45px #c88cff;
-}
-
-.subtitle {
-    font-size: 1.25rem;
-    margin-top: 20px;
-    color: #f5e8ff;
-}
-
-
-/* ================= BUTTONS ================= */
-
-.surprise-button,
-.memory-button {
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-
-    transition: transform 0.25s ease,
-                box-shadow 0.25s ease,
-                background 0.25s ease;
-}
-
-.surprise-button {
-    margin-top: 40px;
-    padding: 16px 30px;
-
-    border-radius: 40px;
-
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #edc9ff,
-        #d28cff
-    );
-
-    color: #3b185c;
-
-    font-size: 1.05rem;
-    font-weight: bold;
-
-    box-shadow:
-        0 0 15px rgba(255,255,255,0.6),
-        0 0 35px rgba(220,150,255,0.7);
-}
-
-.surprise-button:hover {
-    transform: scale(1.08);
-
-    box-shadow:
-        0 0 25px white,
-        0 0 60px #df9fff;
-}
-
-.surprise-button:active,
-.memory-button:active {
-    transform: scale(0.95);
-}
-
-
-/* ================= LETTER ================= */
-
-.letter-section {
-    padding: 100px 20px;
-
-    display: flex;
-    justify-content: center;
-}
-
-.letter-card {
-    max-width: 800px;
-    width: 100%;
-
-    padding: 45px 35px;
-
-    background: rgba(255,255,255,0.10);
-
-    border: 1px solid rgba(255,255,255,0.25);
-
-    border-radius: 30px;
-
-    backdrop-filter: blur(12px);
-
-    box-shadow:
-        0 20px 70px rgba(0,0,0,0.25),
-        0 0 30px rgba(220,170,255,0.2);
-}
-
-.section-title {
-    text-align: center;
-
-    font-size: clamp(30px,6vw,48px);
-
-    margin-bottom: 30px;
-
-    color: #ffe9ff;
-}
-
-.letter-text {
-    font-size: 1.1rem;
-
-    line-height: 1.9;
-
-    color: #f8eaff;
-
-    text-align: center;
-}
-
-
-/* ================= REASONS ================= */
-
-.reasons-section {
-    padding: 80px 20px;
-}
-
-.reasons-container {
-    max-width: 900px;
-    margin: auto;
-}
-
-.reasons {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(220px,1fr));
-
-    gap: 20px;
-}
-
-.reason {
-    padding: 25px;
-
-    background: rgba(255,255,255,0.10);
-
-    border: 1px solid rgba(255,255,255,0.2);
-
-    border-radius: 20px;
-
-    text-align: center;
-
-    backdrop-filter: blur(8px);
-
-    transition: 0.3s;
-}
-
-.reason:hover {
-    transform: translateY(-8px);
-
-    background: rgba(255,255,255,0.15);
-
-    box-shadow:
-        0 0 30px rgba(231,174,255,0.3);
-}
-
-.reason-number {
-    font-size: 2rem;
-
-    font-weight: bold;
-
-    color: #f0c7ff;
-
-    margin-bottom: 10px;
-}
-
-.reason-text {
-    line-height: 1.6;
-    color: #f9eaff;
-}
-
-
-/* ================= MEMORIES ================= */
-
-#memories-section {
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.memories-subtitle {
-    color: #ead7ff;
-    margin-bottom: 35px;
-    font-size: 1.1rem;
-}
-
-.memory-card {
-    max-width: 650px;
-
-    margin: auto;
-
-    padding: 25px;
-
-    border-radius: 30px;
-
-    background: rgba(255,255,255,0.12);
-
-    border:
-        1px solid rgba(255,255,255,0.25);
-
-    backdrop-filter: blur(12px);
-
-    box-shadow:
-        0 20px 70px rgba(0,0,0,0.3),
-        0 0 40px rgba(222,163,255,0.25);
-}
-
-.memory-image {
-    width: 100%;
-
-    max-height: 550px;
-
-    object-fit: contain;
-
-    border-radius: 22px;
-
-    background: rgba(0,0,0,0.15);
-
-    box-shadow:
-        0 0 25px rgba(255,255,255,0.2);
-}
-
-.memory-message {
-    margin-top: 25px;
-
-    font-size: 1.15rem;
-
-    line-height: 1.8;
-
-    color: #fff1ff;
-
-    min-height: 100px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.memory-controls {
-    margin-top: 25px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
-.memory-button {
-    padding: 13px 24px;
-
-    border:
-        1px solid rgba(255,255,255,0.35);
-
-    border-radius: 30px;
-
-    background: rgba(255,255,255,0.14);
-
-    color: white;
-
-    font-size: 1rem;
-
-    font-weight: 600;
-}
-
-.memory-button:hover {
-    background: rgba(255,255,255,0.30);
-
-    transform: scale(1.06);
-
-    box-shadow:
-        0 0 20px rgba(255,255,255,0.25);
-}
-
-.memory-count {
-    font-weight: bold;
-
-    color: #f5d9ff;
-
-    min-width: 80px;
-}
-
-.memory-dots {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    margin-top: 20px;
-}
-
-.memory-dot {
-    width: 9px;
-    height: 9px;
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,0.35);
-
-    transition: 0.3s;
-
-    cursor: pointer;
-}
-
-.memory-dot.active {
-    width: 25px;
-
-    border-radius: 10px;
-
-    background: #ffd4f7;
-
-    box-shadow:
-        0 0 10px #ffd4f7;
-}
-
-
-/* ================= FINAL ================= */
-
-.final-section {
-    padding: 120px 20px;
-
-    text-align: center;
-}
-
-.final-card {
-    max-width: 750px;
-
-    margin: auto;
-
-    padding: 50px 30px;
-
-    background: rgba(255,255,255,0.10);
-
-    border-radius: 30px;
-
-    border:
-        1px solid rgba(255,255,255,0.25);
-
-    backdrop-filter: blur(12px);
-
-    box-shadow:
-        0 20px 70px rgba(0,0,0,0.3),
-        0 0 50px rgba(224,168,255,0.25);
-}
-
-.final-card h2 {
-    font-size: clamp(35px,7vw,60px);
-
-    color: #ffeaff;
-
-    margin-bottom: 25px;
-}
-
-.final-card p {
-    font-size: 1.15rem;
-
-    line-height: 1.8;
-
-    color: #f8e8ff;
-}
-
-.final-heart {
-    font-size: 60px;
-
-    margin-top: 25px;
-
-    display: inline-block;
-
-    animation: heartBeat 1.2s infinite;
-
-    filter:
-        drop-shadow(0 0 10px #ffb4ed)
-        drop-shadow(0 0 25px #ff82d6);
-}
-
-@keyframes heartBeat {
-
-    0%,100% {
-        transform: scale(1);
-    }
-
-    25% {
-        transform: scale(1.2);
-    }
-
-    50% {
-        transform: scale(1);
-    }
-
-    75% {
-        transform: scale(1.15);
-    }
-}
-
-
-/* ================= CONFETTI ================= */
-
-.confetti {
-    position: fixed;
-
-    width: 10px;
-    height: 10px;
-
-    top: -20px;
-
-    z-index: 100;
-
-    pointer-events: none;
-
-    animation: confettiFall linear forwards;
-}
-
-@keyframes confettiFall {
-
-    0% {
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity: 1;
-    }
-
-    100% {
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity: 0;
-    }
-}
-
-
-/* ================= MOBILE ================= */
-
-@media (max-width:600px) {
-
-    .hero-photo {
-        width: 190px;
-        height: 190px;
-    }
-
-    .small-title {
-        font-size: 0.9rem;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-    }
-
-    .letter-card {
-        padding: 30px 20px;
-    }
-
-    .memory-card {
-        padding: 15px;
-    }
-
-    .memory-message {
-        font-size: 1rem;
-        min-height: 130px;
-    }
-
-    .heart {
-        font-size: 21px;
-    }
-
-}
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- ================= HEARTS ================= -->
-
+<!-- Moving hearts -->
 <div class="hearts-container">
-
-    <div class="heart" style="left:2%;animation-duration:10s;">💜</div>
-    <div class="heart" style="left:8%;animation-duration:13s;animation-delay:2s;">💗</div>
-    <div class="heart" style="left:15%;animation-duration:9s;animation-delay:4s;">💕</div>
-    <div class="heart" style="left:22%;animation-duration:15s;animation-delay:1s;">💜</div>
-    <div class="heart" style="left:29%;animation-duration:11s;animation-delay:5s;">💖</div>
-    <div class="heart" style="left:36%;animation-duration:14s;animation-delay:3s;">💗</div>
-    <div class="heart" style="left:43%;animation-duration:10s;animation-delay:6s;">💜</div>
-    <div class="heart" style="left:50%;animation-duration:16s;animation-delay:2s;">💕</div>
-    <div class="heart" style="left:57%;animation-duration:12s;animation-delay:7s;">💖</div>
-    <div class="heart" style="left:64%;animation-duration:9s;animation-delay:1s;">💜</div>
-    <div class="heart" style="left:71%;animation-duration:14s;animation-delay:4s;">💗</div>
-    <div class="heart" style="left:78%;animation-duration:11s;animation-delay:8s;">💕</div>
-    <div class="heart" style="left:85%;animation-duration:15s;animation-delay:2s;">💜</div>
-    <div class="heart" style="left:92%;animation-duration:10s;animation-delay:5s;">💖</div>
-
+  <div class="heart" style="left:2%;animation-duration:10s;animation-delay:0s">💜</div>
+  <div class="heart" style="left:8%;animation-duration:13s;animation-delay:2s">💗</div>
+  <div class="heart" style="left:15%;animation-duration:9s;animation-delay:4s">💕</div>
+  <div class="heart" style="left:22%;animation-duration:15s;animation-delay:1s">💜</div>
+  <div class="heart" style="left:29%;animation-duration:11s;animation-delay:5s">💖</div>
+  <div class="heart" style="left:36%;animation-duration:14s;animation-delay:3s">💗</div>
+  <div class="heart" style="left:43%;animation-duration:10s;animation-delay:6s">💜</div>
+  <div class="heart" style="left:50%;animation-duration:16s;animation-delay:2s">💕</div>
+  <div class="heart" style="left:57%;animation-duration:12s;animation-delay:7s">💖</div>
+  <div class="heart" style="left:64%;animation-duration:9s;animation-delay:1s">💜</div>
+  <div class="heart" style="left:71%;animation-duration:14s;animation-delay:4s">💗</div>
+  <div class="heart" style="left:78%;animation-duration:11s;animation-delay:8s">💕</div>
+  <div class="heart" style="left:85%;animation-duration:15s;animation-delay:2s">💜</div>
+  <div class="heart" style="left:92%;animation-duration:10s;animation-delay:5s">💖</div>
+  <div class="heart" style="left:5%;animation-duration:12s;animation-delay:7s">💗</div>
+  <div class="heart" style="left:18%;animation-duration:16s;animation-delay:9s">💜</div>
+  <div class="heart" style="left:33%;animation-duration:13s;animation-delay:10s">💕</div>
+  <div class="heart" style="left:48%;animation-duration:11s;animation-delay:11s">💖</div>
+  <div class="heart" style="left:63%;animation-duration:15s;animation-delay:9s">💜</div>
+  <div class="heart" style="left:80%;animation-duration:13s;animation-delay:12s">💗</div>
+  <div class="heart" style="left:95%;animation-duration:16s;animation-delay:10s">💕</div>
 </div>
 
-
-<!-- ================= SPARKLES ================= -->
-
+<!-- Sparkles -->
 <div class="sparkles-container">
-
-    <div class="sparkle" style="left:10%;top:15%;">✦</div>
-    <div class="sparkle" style="left:25%;top:30%;animation-delay:1s;">✧</div>
-    <div class="sparkle" style="left:40%;top:10%;animation-delay:.5s;">✦</div>
-    <div class="sparkle" style="left:60%;top:25%;animation-delay:1.5s;">✧</div>
-    <div class="sparkle" style="left:75%;top:12%;animation-delay:.7s;">✦</div>
-    <div class="sparkle" style="left:90%;top:35%;animation-delay:1.2s;">✧</div>
-
+  <div class="sparkle" style="left:10%;top:15%;animation-delay:0s">✦</div>
+  <div class="sparkle" style="left:25%;top:30%;animation-delay:1s">✧</div>
+  <div class="sparkle" style="left:40%;top:10%;animation-delay:.5s">✦</div>
+  <div class="sparkle" style="left:60%;top:25%;animation-delay:1.5s">✧</div>
+  <div class="sparkle" style="left:75%;top:12%;animation-delay:.7s">✦</div>
+  <div class="sparkle" style="left:90%;top:35%;animation-delay:1.2s">✧</div>
 </div>
-
 
 <div class="content">
 
-
-<!-- ================= HERO ================= -->
-
+<!-- Hero -->
 <section class="hero">
-
-    <div class="hero-content">
-
-        <img
-            src="IMG_20260914_153341.jpg"
-            class="hero-photo"
-            alt="Pragna"
-        >
-
-        <div class="small-title">
-            A Very Special Day
-        </div>
-
-        <div class="big-number">
-            18
-        </div>
-
-        <div class="name">
-            Pragna
-        </div>
-
-        <div class="subtitle">
-            ✨ Happy 18th Birthday ✨
-        </div>
-
-        <button
-            type="button"
-            id="openSurpriseButton"
-            class="surprise-button"
-        >
-            Open Your Surprise 💜
-        </button>
-
-    </div>
-
+  <div class="hero-content">
+    <img src="IMG_20260914_153341.jpg" alt="Pragna" class="hero-photo">
+    <div class="small-title">A Very Special Day</div>
+    <div class="big-number">18</div>
+    <div class="name">Pragna</div>
+    <div class="subtitle">✨ Happy 18th Birthday ✨</div>
+    <button class="surprise-button" onclick="showSurprise()">Open Your Surprise 💜</button>
+  </div>
 </section>
 
-
-<!-- ================= LETTER ================= -->
-
+<!-- Letter -->
 <section class="letter-section">
-
-    <div class="letter-card">
-
-        <h2 class="section-title">
-            💌 A Letter For You
-        </h2>
-
-        <p class="letter-text">
-
-            Dear Pragna,<br><br>
-
-            Today is not just another birthday.
-            Today marks the beginning of something beautiful —
-            your 18th chapter. ♡<br><br>
-
-            Watching you grow through all these years has
-            been such a beautiful journey. From all the little
-            moments to the memories we have created together,
-            every moment has become a part of something special.<br><br>
-
-            As you step into adulthood, I hope you chase
-            every dream in your heart. I hope you laugh loudly,
-            love deeply, explore fearlessly and always believe
-            in yourself.<br><br>
-
-            No matter how much life changes,
-            always remember that you are loved,
-            appreciated and incredibly special. 💜<br><br>
-
-            Happy 18th Birthday, Pragna! 🎂✨
-
-        </p>
-
-    </div>
-
+  <div class="letter-card">
+    <h2 class="section-title">💌 A Letter For You</h2>
+    <p class="letter-text">
+      Dear Pragna,<br><br>
+      Today is not just another birthday. Today marks the beginning of something beautiful —
+      your 18th chapter. ♡<br><br>
+      Watching you grow through all these years has been such a beautiful journey.
+      From all the little moments to the memories we have created together,
+      every moment has become a part of something special.<br><br>
+      As you step into adulthood, I hope you chase every dream in your heart.
+      I hope you laugh loudly, love deeply, explore fearlessly and always believe in yourself.<br><br>
+      No matter how much life changes, always remember that you are loved,
+      appreciated and incredibly special. 💜<br><br>
+      Happy 18th Birthday, Pragna! 🎂✨
+    </p>
+  </div>
 </section>
 
-
-<!-- ================= 18 REASONS ================= -->
-
+<!-- 18 Reasons -->
 <section class="reasons-section">
-
-    <div class="reasons-container">
-
-        <h2 class="section-title">
-            💜 18 Little Reasons
-        </h2>
-
-        <div class="reasons">
-
-            <div class="reason">
-                <div class="reason-number">01</div>
-                <div class="reason-text">
-                    Your beautiful smile can brighten any day.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">02</div>
-                <div class="reason-text">
-                    You make ordinary moments feel special.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">03</div>
-                <div class="reason-text">
-                    You have a heart full of kindness.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">04</div>
-                <div class="reason-text">
-                    You are growing into an amazing person.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">05</div>
-                <div class="reason-text">
-                    Your laughter is impossible not to love.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">06</div>
-                <div class="reason-text">
-                    You make memories worth remembering.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">07</div>
-                <div class="reason-text">
-                    You always bring your own special energy.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">08</div>
-                <div class="reason-text">
-                    You deserve every beautiful thing life has to offer.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">09</div>
-                <div class="reason-text">
-                    You are stronger than you sometimes realize.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">10</div>
-                <div class="reason-text">
-                    You have so many wonderful chapters ahead.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">11</div>
-                <div class="reason-text">
-                    You make the people around you happier.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">12</div>
-                <div class="reason-text">
-                    You are wonderfully and uniquely you.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">13</div>
-                <div class="reason-text">
-                    Your dreams deserve to be chased.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">14</div>
-                <div class="reason-text">
-                    You have so much potential waiting ahead.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">15</div>
-                <div class="reason-text">
-                    Your presence makes memories more meaningful.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">16</div>
-                <div class="reason-text">
-                    You deserve to be proud of how far you've come.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">17</div>
-                <div class="reason-text">
-                    You are loved more than words can explain.
-                </div>
-            </div>
-
-            <div class="reason">
-                <div class="reason-number">18</div>
-                <div class="reason-text">
-                    Because simply being Pragna makes you special. 💜
-                </div>
-            </div>
-
-        </div>
-
+  <div class="reasons-container">
+    <h2 class="section-title">💜 18 Little Reasons</h2>
+    <div class="reasons">
+      <div class="reason"><div class="reason-number">01</div><div class="reason-text">Your beautiful smile can brighten any day.</div></div>
+      <div class="reason"><div class="reason-number">02</div><div class="reason-text">You make ordinary moments feel special.</div></div>
+      <div class="reason"><div class="reason-number">03</div><div class="reason-text">You have a heart full of kindness.</div></div>
+      <div class="reason"><div class="reason-number">04</div><div class="reason-text">You are growing into an amazing person.</div></div>
+      <div class="reason"><div class="reason-number">05</div><div class="reason-text">Your laughter is impossible not to love.</div></div>
+      <div class="reason"><div class="reason-number">06</div><div class="reason-text">You make memories worth remembering.</div></div>
+      <div class="reason"><div class="reason-number">07</div><div class="reason-text">You always bring your own special energy.</div></div>
+      <div class="reason"><div class="reason-number">08</div><div class="reason-text">You deserve every beautiful thing life has to offer.</div></div>
+      <div class="reason"><div class="reason-number">09</div><div class="reason-text">You are stronger than you sometimes realize.</div></div>
+      <div class="reason"><div class="reason-number">10</div><div class="reason-text">You have so many wonderful chapters ahead.</div></div>
+      <div class="reason"><div class="reason-number">11</div><div class="reason-text">You make the people around you happier.</div></div>
+      <div class="reason"><div class="reason-number">12</div><div class="reason-text">You are wonderfully and uniquely you.</div></div>
+      <div class="reason"><div class="reason-number">13</div><div class="reason-text">Your dreams deserve to be chased.</div></div>
+      <div class="reason"><div class="reason-number">14</div><div class="reason-text">You have so much potential waiting ahead.</div></div>
+      <div class="reason"><div class="reason-number">15</div><div class="reason-text">Your presence makes memories more meaningful.</div></div>
+      <div class="reason"><div class="reason-number">16</div><div class="reason-text">You deserve to be proud of how far you've come.</div></div>
+      <div class="reason"><div class="reason-number">17</div><div class="reason-text">You are loved more than words can explain.</div></div>
+      <div class="reason"><div class="reason-number">18</div><div class="reason-text">Because simply being Pragna makes you special. 💜</div></div>
     </div>
-
+  </div>
 </section>
 
-
-<!-- ================= MEMORIES ================= -->
-
+<!-- Memories -->
 <section id="memories-section">
+  <h2 class="section-title">📸 18 Years, 18 Memories ♡</h2>
+  <p class="memories-subtitle">One picture at a time… because every memory deserves its own moment. 💜</p>
 
-    <h2 class="section-title">
-        📸 18 Years, 18 Memories ♡
-    </h2>
+  <div class="memory-card">
+    <img id="memoryImage" class="memory-image" src="" alt="Pragna memory">
+    <div id="memoryMessage" class="memory-message"></div>
 
-    <p class="memories-subtitle">
-        One picture at a time… because every memory deserves its own moment. 💜
+    <div class="memory-controls">
+      <button class="memory-button" onclick="previousMemory()">← Previous</button>
+      <div id="memoryCount" class="memory-count">1 / 8</div>
+      <button class="memory-button" onclick="nextMemory()">Next →</button>
+    </div>
+
+    <div id="memoryDots" class="memory-dots"></div>
+  </div>
+</section>
+
+<!-- Final -->
+<section class="final-section">
+  <div class="final-card">
+    <h2>Happy 18th, Pragna! 🎂</h2>
+    <p>
+      May your 18th year be filled with happiness, adventures, beautiful surprises,
+      unforgettable memories and everything your heart wishes for. 💜
+      <br><br>
+      Keep smiling. Keep dreaming. Keep being the amazing person you are.
+      <br><br>
+      Here's to 18 beautiful years — and to all the beautiful years still waiting for you. ✨
     </p>
 
-
-    <div class="memory-card">
-
-        <img
-            id="memoryImage"
-            class="memory-image"
-            src=""
-            alt="Pragna memory"
-        >
-
-        <div
-            id="memoryMessage"
-            class="memory-message"
-        ></div>
-
-
-        <div class="memory-controls">
-
-            <button
-                type="button"
-                id="previousButton"
-                class="memory-button"
-            >
-                ← Previous
-            </button>
-
-            <div
-                id="memoryCount"
-                class="memory-count"
-            >
-                1 / 8
-            </div>
-
-            <button
-                type="button"
-                id="nextButton"
-                class="memory-button"
-            >
-                Next →
-            </button>
-
-        </div>
-
-
-        <div
-            id="memoryDots"
-            class="memory-dots"
-        ></div>
-
-    </div>
-
+    <div class="final-heart">💜</div>
+    <br>
+    <button class="surprise-button" onclick="showMessage()">One Last Surprise ✨</button>
+  </div>
 </section>
 
+</div>
 
-<!-- ================= FINAL ================= -->
+<script>
+/* Memory data */
+const memories = [
+  {
+    photo:"IMG-20231123-WA0066.jpg",
+    message:"18 years of your life, and so many beautiful moments already written. May this be the beginning of your most wonderful chapter yet. ♡"
+  },
+  {
+    photo:"IMG-20240728-WA0012.jpg",
+    message:"Some memories become precious simply because they were shared with someone special. I hope we make countless more together. 💜"
+  },
+  {
+    photo:"IMG-20240728-WA0020.jpg",
+    message:"You are stepping into adulthood today, but no matter how much you grow, you will always be the little sister who means so much to me. ♡"
+  },
+  {
+    photo:"IMG-20241007-WA0043.jpg",
+    message:"May the girl in this picture always keep that beautiful smile, even when life gets difficult. You deserve every reason to smile. ✨"
+  },
+  {
+    photo:"IMG-20241007-WA0047.jpg",
+    message:"18 is not just a number. It is the beginning of new dreams, new adventures and a beautiful journey that is completely yours. 🌸"
+  },
+  {
+    photo:"IMG-20241008-WA0009.jpg",
+    message:"Years from now, I hope we look back at these pictures and smile at how far we came—and remember how beautiful these days were. 💕"
+  },
+  {
+    photo:"IMG-20260714-WA0007.jpg",
+    message:"Wherever life takes you, I hope you always remember that you have someone cheering for you, believing in you and loving you. 💜"
+  },
+  {
+    photo:"IMG_20260914_153341.jpg",
+    message:"And here you are… 18. May the woman you become always be proud of the girl you were. Happy 18th birthday, Pragna. 🎂♡"
+  }
+];
 
-<section class="final-section">
+let currentMemory=0;
 
-    <div class="final-card">
+function updateMemory(){
+  const image=document.getElementById("memoryImage");
+  const message=document.getElementById("memoryMessage");
+  const count=document.getElementById("memoryCount");
 
-        <h2>
-            Happy 18th, Pragna! 🎂
-        </h2>
+  image.style.animation="none";
+  void image.offsetWidth;
+  image.style.animation="memoryImageAppear .6s ease";
 
-        <p>
+  image.src=memories[currentMemory].photo;
+  message.textContent=memories[currentMemory].message;
+  count.textContent=`${currentMemory+1} / ${memories.length}`;
 
-            May your 18th year be filled wit
+  createDots();
+}
+
+function nextMemory(){
+  currentMemory++;
+  if(currentMemory>=memories.length) currentMemory=0;
+  updateMemory();
+}
+
+function previousMemory(){
+  currentMemory--;
+  if(currentMemory<0) currentMemory=memories.length-1;
+  updateMemory();
+}
+
+function createDots(){
+  const dotsContainer=document.getElementById("memoryDots");
+  dotsContainer.innerHTML="";
+
+  memories.forEach((memory,index)=>{
+    const dot=document.createElement("div");
+    dot.className="memory-dot";
+    if(index===currentMemory) dot.classList.add("active");
+
+    dot.onclick=function(){
+      currentMemory=index;
+      updateMemory();
+    };
+
+    dotsContainer.appendChild(dot);
+  });
+}
+
+function showSurprise(){
+  document.getElementById("memories-section").scrollIntoView({
+    behavior:"smooth"
+  });
+}
+
+function showMessage(){
+  createConfetti();
+
+  setTimeout(()=>{
+    alert(
+      "Happy 18th Birthday, Pragna! 💜🎂✨\n\n"+
+      "You deserve all the happiness in the world!\n"+
+      "Never stop smiling and never stop dreaming. ♡"
+    );
+  },700);
+}
+
+function createConfetti(){
+  const symbols=["💜","💗","💕","✨","🌸","🎉","🎂"];
+
+  for(let i=0;i<80;i++){
+    const confetti=document.createElement("div");
+    confetti.className="confetti";
+    confetti.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    confetti.style.left=Math.random()*100+"vw";
+    confetti.style.fontSize=(12+Math.random()*20)+"px";
+    confetti.style.animationDuration=(3+Math.random()*4)+"s";
+    confetti.style.animationDelay=Math.random()*1.5+"s";
+
+    document.body.appendChild(confetti);
+
+    setTimeout(()=>confetti.remove(),7000);
+  }
+}
+
+/* Start the memories */
+updateMemory();
+
+/* Continuously create new moving hearts */
+function createMovingHeart(){
+  const container=document.querySelector(".hearts-container");
+  const heart=document.createElement("div");
+
+  heart.className="heart";
+
+  const symbols=["💜","💗","💕","💖","♡"];
+  heart.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+
+  heart.style.left=Math.random()*100+"%";
+  heart.style.fontSize=(18+Math.random()*25)+"px";
+
+  const duration=8+Math.random()*10;
+  heart.style.animationDuration=duration+"s";
+
+  container.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),duration*1000);
+}
+
+/* A new heart every half second */
+setInterval(createMovingHeart,500);
+
+/* Keyboard controls */
+document.addEventListener("keydown",function(event){
+  if(event.key==="ArrowRight") nextMemory();
+  if(event.key==="ArrowLeft") previousMemory();
+});
+</script>
+
+</body>
+</html>
