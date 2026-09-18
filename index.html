@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Happy 18th Birthday Pragna 💜</title>
 
+
 <style>
 
-/* =========================
-   BASIC RESET
-========================= */
+/* =========================================
+   RESET
+========================================= */
 
 * {
     margin: 0;
@@ -23,834 +28,1255 @@ html {
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background:
-        radial-gradient(circle at top, #8f6bd1 0%, #4b2875 45%, #160b2b 100%);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
     color: white;
+
     min-height: 100vh;
+
     overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #9b75d1 0%,
+            #5a347f 40%,
+            #1b0d31 100%
+        );
 }
 
 
-/* =========================
-   MOVING HEART BACKGROUND
-========================= */
+/* =========================================
+   MOVING HEARTS
+========================================= */
 
 .hearts-container {
+
     position: fixed;
-    inset: 0;
+
+    left: 0;
+    top: 0;
+
     width: 100%;
     height: 100%;
+
     overflow: hidden;
+
     pointer-events: none;
+
     z-index: 1;
 }
 
+
 .heart {
+
     position: absolute;
+
     bottom: -80px;
-    color: #ffb6e6;
-    font-size: 25px;
-    opacity: 0.85;
-    animation: floatHeart linear infinite;
+
+    font-size: 28px;
+
+    opacity: 0;
+
     filter:
-        drop-shadow(0 0 8px #ff9ddd)
-        drop-shadow(0 0 15px rgba(255, 130, 220, 0.7));
+        drop-shadow(0 0 6px #ffb7ec)
+        drop-shadow(0 0 15px #ff8ddd);
+
+    animation:
+        floatingHeart linear forwards;
 }
 
-@keyframes floatHeart {
+
+@keyframes floatingHeart {
 
     0% {
+
         transform:
             translateY(0)
             translateX(0)
             rotate(0deg)
-            scale(0.7);
+            scale(0.5);
+
         opacity: 0;
+
     }
+
 
     10% {
-        opacity: 0.9;
+
+        opacity: 0.95;
+
     }
 
-    25% {
+
+    30% {
+
         transform:
-            translateY(-25vh)
-            translateX(35px)
+            translateY(-30vh)
+            translateX(50px)
             rotate(15deg)
             scale(1);
+
     }
+
 
     50% {
+
         transform:
-            translateY(-50vh)
-            translateX(-40px)
+            translateY(-55vh)
+            translateX(-45px)
             rotate(-15deg)
-            scale(1.1);
+            scale(1.15);
+
     }
 
-    75% {
+
+    70% {
+
         transform:
-            translateY(-75vh)
-            translateX(45px)
+            translateY(-80vh)
+            translateX(50px)
             rotate(15deg)
-            scale(0.9);
+            scale(0.95);
+
     }
+
 
     100% {
+
         transform:
             translateY(-120vh)
-            translateX(-30px)
+            translateX(-40px)
             rotate(-20deg)
             scale(0.7);
+
         opacity: 0;
+
     }
+
 }
 
 
-/* =========================
+/* =========================================
    SPARKLES
-========================= */
+========================================= */
 
 .sparkles-container {
+
     position: fixed;
+
     inset: 0;
+
     pointer-events: none;
+
     z-index: 2;
+
 }
+
 
 .sparkle {
+
     position: absolute;
+
     color: white;
-    animation: sparkleAnimation 2s ease-in-out infinite;
+
+    font-size: 20px;
+
     text-shadow:
         0 0 5px white,
-        0 0 12px #e7c6ff;
+        0 0 15px #e8c5ff;
+
+    animation:
+        sparkle 2s ease-in-out infinite;
+
 }
 
-@keyframes sparkleAnimation {
+
+@keyframes sparkle {
 
     0%, 100% {
+
         opacity: 0.2;
-        transform: scale(0.6);
+
+        transform:
+            scale(0.5)
+            rotate(0deg);
+
     }
 
     50% {
+
         opacity: 1;
-        transform: scale(1.4);
+
+        transform:
+            scale(1.4)
+            rotate(180deg);
+
     }
+
 }
 
 
-/* =========================
-   MAIN CONTENT
-========================= */
+/* =========================================
+   CONTENT
+========================================= */
 
 .content {
+
     position: relative;
+
     z-index: 5;
+
 }
 
 
-/* =========================
+/* =========================================
    HERO
-========================= */
+========================================= */
 
 .hero {
+
     min-height: 100vh;
+
     display: flex;
-    justify-content: center;
+
     align-items: center;
+
+    justify-content: center;
+
     text-align: center;
-    padding: 30px 20px;
+
+    padding:
+        40px 20px;
+
 }
 
+
 .hero-content {
-    max-width: 850px;
+
     width: 100%;
-    animation: heroAppear 1.5s ease;
+
+    max-width: 850px;
+
+    animation:
+        heroAppear 1.5s ease;
+
 }
+
 
 @keyframes heroAppear {
 
     from {
+
         opacity: 0;
-        transform: translateY(40px);
+
+        transform:
+            translateY(40px);
+
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
+
     }
+
 }
 
 
-/* Hero image */
+/* =========================================
+   HERO PHOTO
+========================================= */
 
 .hero-photo {
-    width: 230px;
-    height: 230px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 6px solid rgba(255,255,255,0.8);
-    box-shadow:
-        0 0 20px #e8c9ff,
-        0 0 50px rgba(220,170,255,0.8),
-        0 0 100px rgba(220,170,255,0.4);
 
-    animation: photoFloat 4s ease-in-out infinite;
+    width: 230px;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        6px solid
+        rgba(255,255,255,0.9);
+
+    box-shadow:
+
+        0 0 20px #f0d4ff,
+
+        0 0 50px
+        rgba(230,170,255,0.8),
+
+        0 0 100px
+        rgba(230,170,255,0.4);
+
+    animation:
+        photoFloat 4s ease-in-out infinite;
+
 }
+
 
 @keyframes photoFloat {
 
     0%, 100% {
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
+
     }
 
     50% {
-        transform: translateY(-15px);
+
+        transform:
+            translateY(-15px);
+
     }
+
 }
 
 
-/* Birthday text */
+/* =========================================
+   HERO TEXT
+========================================= */
 
 .small-title {
-    margin-top: 35px;
-    font-size: 1.2rem;
+
+    margin-top: 30px;
+
+    font-size: 1.1rem;
+
     letter-spacing: 4px;
+
     text-transform: uppercase;
-    color: #f4dfff;
+
+    color: #f5dcff;
+
 }
 
+
 .big-number {
-    font-size: clamp(100px, 22vw, 190px);
+
+    font-size:
+        clamp(100px, 23vw, 190px);
+
     font-weight: 900;
+
     line-height: 0.9;
-    margin: 10px 0;
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #e9c5ff,
-        #ffb5e8
-    );
+
+    margin:
+        10px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #e9c4ff,
+            #ffb5e8
+        );
+
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
 
     filter:
-        drop-shadow(0 0 20px rgba(255,255,255,0.5))
-        drop-shadow(0 0 40px rgba(236,178,255,0.7));
+        drop-shadow(
+            0 0 25px
+            rgba(255,255,255,0.6)
+        );
 
-    animation: numberGlow 2s ease-in-out infinite;
 }
 
-@keyframes numberGlow {
-
-    0%, 100% {
-        filter:
-            drop-shadow(0 0 15px rgba(255,255,255,0.4))
-            drop-shadow(0 0 35px rgba(236,178,255,0.6));
-    }
-
-    50% {
-        filter:
-            drop-shadow(0 0 30px rgba(255,255,255,0.8))
-            drop-shadow(0 0 70px rgba(236,178,255,0.9));
-    }
-}
 
 .name {
-    font-size: clamp(45px, 10vw, 85px);
+
+    font-size:
+        clamp(45px, 10vw, 85px);
+
     font-weight: 700;
+
     color: white;
+
     text-shadow:
-        0 0 10px #fff,
+
+        0 0 10px white,
+
         0 0 25px #e5b9ff,
-        0 0 45px #c88cff;
+
+        0 0 50px #c889ff;
+
 }
+
 
 .subtitle {
-    font-size: 1.25rem;
+
     margin-top: 20px;
-    color: #f5e8ff;
+
+    font-size: 1.25rem;
+
+    color: #f7eaff;
+
 }
 
 
-/* =========================
+/* =========================================
    BUTTON
-========================= */
+========================================= */
 
 .surprise-button {
-    margin-top: 40px;
-    padding: 16px 30px;
+
+    margin-top: 35px;
+
+    padding:
+        16px 30px;
+
     border: none;
+
     border-radius: 40px;
 
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #edc9ff,
-        #d28cff
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #edc9ff,
+            #d18cff
+        );
 
     color: #3b185c;
-    font-size: 1.05rem;
+
+    font-size: 1rem;
+
     font-weight: bold;
 
     cursor: pointer;
 
     box-shadow:
-        0 0 15px rgba(255,255,255,0.6),
-        0 0 35px rgba(220,150,255,0.7);
 
-    transition: 0.3s;
+        0 0 15px
+        rgba(255,255,255,0.7),
+
+        0 0 35px
+        rgba(220,150,255,0.7);
+
+    transition:
+        0.3s;
+
 }
+
 
 .surprise-button:hover {
-    transform: scale(1.08);
+
+    transform:
+        scale(1.08);
+
     box-shadow:
+
         0 0 25px white,
+
         0 0 60px #df9fff;
+
 }
 
 
-/* =========================
-   LETTER SECTION
-========================= */
+/* =========================================
+   LETTER
+========================================= */
 
 .letter-section {
-    padding: 100px 20px;
+
+    padding:
+        90px 20px;
+
     display: flex;
+
     justify-content: center;
+
 }
+
 
 .letter-card {
-    max-width: 800px;
+
     width: 100%;
 
-    padding: 45px 35px;
+    max-width: 800px;
 
-    background: rgba(255,255,255,0.10);
-    border: 1px solid rgba(255,255,255,0.25);
+    padding:
+        45px 35px;
+
+    background:
+        rgba(255,255,255,0.10);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
     border-radius: 30px;
 
-    backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(12px);
 
     box-shadow:
-        0 20px 70px rgba(0,0,0,0.25),
-        0 0 30px rgba(220,170,255,0.2);
 
-    animation: cardFloat 5s ease-in-out infinite;
+        0 20px 70px
+        rgba(0,0,0,0.25),
+
+        0 0 30px
+        rgba(220,170,255,0.25);
+
 }
 
-@keyframes cardFloat {
-
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-}
 
 .section-title {
+
     text-align: center;
-    font-size: clamp(30px, 6vw, 48px);
+
+    font-size:
+        clamp(30px, 6vw, 48px);
+
     margin-bottom: 30px;
-    color: #ffe9ff;
+
+    color: #ffeaff;
+
+    text-shadow:
+        0 0 15px
+        rgba(240,200,255,0.5);
+
 }
+
 
 .letter-text {
+
+    text-align: center;
+
     font-size: 1.1rem;
+
     line-height: 1.9;
+
     color: #f8eaff;
-    text-align: center;
+
 }
 
 
-/* =========================
-   REASONS
-========================= */
-
-.reasons-section {
-    padding: 80px 20px;
-}
-
-.reasons-container {
-    max-width: 900px;
-    margin: auto;
-}
-
-.reasons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.reason {
-    padding: 25px;
-
-    background: rgba(255,255,255,0.10);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 20px;
-
-    text-align: center;
-
-    backdrop-filter: blur(8px);
-
-    transition: 0.3s;
-}
-
-.reason:hover {
-    transform: translateY(-8px) scale(1.02);
-    background: rgba(255,255,255,0.15);
-    box-shadow: 0 0 30px rgba(231,174,255,0.3);
-}
-
-.reason-number {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #f0c7ff;
-    margin-bottom: 10px;
-}
-
-.reason-text {
-    line-height: 1.6;
-    color: #f9eaff;
-}
-
-
-/* =========================
-   MEMORIES SECTION
-========================= */
+/* =========================================
+   MEMORIES
+========================================= */
 
 #memories-section {
-    padding: 100px 20px;
+
+    padding:
+        100px 20px;
+
     text-align: center;
+
 }
+
 
 .memories-subtitle {
-    color: #ead7ff;
+
     margin-bottom: 35px;
+
+    color: #ead7ff;
+
     font-size: 1.1rem;
+
 }
 
 
-/* Photo card */
+/* =========================================
+   MEMORY CARD
+========================================= */
 
 .memory-card {
-    max-width: 650px;
-    margin: auto;
+
+    width: 100%;
+
+    max-width: 680px;
+
+    margin:
+        0 auto;
 
     padding: 25px;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
 
     border-radius: 30px;
 
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.25);
-
-    backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(12px);
 
     box-shadow:
-        0 20px 70px rgba(0,0,0,0.3),
-        0 0 40px rgba(222,163,255,0.25);
 
-    transition: 0.4s;
-}
+        0 20px 70px
+        rgba(0,0,0,0.3),
 
-.memory-card:hover {
-    transform: translateY(-5px);
-    box-shadow:
-        0 25px 80px rgba(0,0,0,0.35),
-        0 0 60px rgba(231,170,255,0.45);
+        0 0 40px
+        rgba(222,163,255,0.25);
+
 }
 
 
-/* Memory image */
+/* =========================================
+   MEMORY IMAGE
+========================================= */
 
 .memory-image {
+
+    display: block;
+
     width: 100%;
+
+    height: auto;
+
     max-height: 550px;
+
     object-fit: contain;
 
     border-radius: 22px;
 
-    background: rgba(0,0,0,0.15);
+    background:
+        rgba(0,0,0,0.15);
 
     box-shadow:
-        0 0 25px rgba(255,255,255,0.2);
+        0 0 30px
+        rgba(255,255,255,0.2);
 
-    animation: memoryImageAppear 0.6s ease;
+    animation:
+        memoryAppear 0.6s ease;
+
 }
 
-@keyframes memoryImageAppear {
+
+@keyframes memoryAppear {
 
     from {
+
         opacity: 0;
-        transform: scale(0.94);
+
+        transform:
+            scale(0.94);
+
     }
 
     to {
+
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
+
     }
+
 }
 
 
-/* Message */
+/* =========================================
+   MEMORY MESSAGE
+========================================= */
 
 .memory-message {
+
     margin-top: 25px;
 
+    min-height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
     font-size: 1.15rem;
+
     line-height: 1.8;
 
     color: #fff1ff;
 
-    min-height: 90px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 
-/* Navigation */
+/* =========================================
+   MEMORY CONTROLS
+========================================= */
 
 .memory-controls {
-    margin-top: 25px;
+
+    margin-top: 20px;
 
     display: flex;
-    justify-content: center;
+
     align-items: center;
+
+    justify-content: center;
+
     gap: 15px;
+
     flex-wrap: wrap;
+
 }
 
-.memory-button {
-    padding: 12px 22px;
 
-    border: 1px solid rgba(255,255,255,0.35);
+.memory-button {
+
+    padding:
+        12px 22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.35);
+
     border-radius: 30px;
 
-    background: rgba(255,255,255,0.12);
+    background:
+        rgba(255,255,255,0.12);
 
     color: white;
 
-    cursor: pointer;
-
     font-size: 1rem;
 
-    transition: 0.3s;
+    cursor: pointer;
+
+    transition:
+        0.3s;
+
 }
+
 
 .memory-button:hover {
-    background: rgba(255,255,255,0.25);
-    transform: scale(1.05);
+
+    background:
+        rgba(255,255,255,0.25);
+
+    transform:
+        scale(1.05);
+
 }
+
 
 .memory-count {
+
+    min-width: 80px;
+
     font-weight: bold;
+
     color: #f5d9ff;
-    min-width: 100px;
+
 }
 
 
-/* Dots */
+/* =========================================
+   MEMORY DOTS
+========================================= */
 
 .memory-dots {
+
     display: flex;
+
     justify-content: center;
+
     gap: 8px;
+
     margin-top: 20px;
+
 }
 
+
 .memory-dot {
+
     width: 9px;
+
     height: 9px;
 
     border-radius: 50%;
 
-    background: rgba(255,255,255,0.35);
+    background:
+        rgba(255,255,255,0.35);
 
-    transition: 0.3s;
+    transition:
+        0.3s;
+
+    cursor: pointer;
+
 }
+
 
 .memory-dot.active {
+
     width: 25px;
+
     border-radius: 10px;
-    background: #ffd4f7;
-    box-shadow: 0 0 10px #ffd4f7;
+
+    background:
+        #ffd4f7;
+
+    box-shadow:
+        0 0 10px #ffd4f7;
+
 }
 
 
-/* =========================
-   FINAL SURPRISE
-========================= */
+/* =========================================
+   FINAL SECTION
+========================================= */
 
 .final-section {
-    padding: 120px 20px;
+
+    padding:
+        110px 20px;
+
     text-align: center;
+
 }
 
-.final-card {
-    max-width: 750px;
-    margin: auto;
-    padding: 50px 30px;
 
-    background: rgba(255,255,255,0.10);
+.final-card {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: auto;
+
+    padding:
+        50px 30px;
+
+    background:
+        rgba(255,255,255,0.10);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
 
     border-radius: 30px;
 
-    border: 1px solid rgba(255,255,255,0.25);
-
-    backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(12px);
 
     box-shadow:
-        0 20px 70px rgba(0,0,0,0.3),
-        0 0 50px rgba(224,168,255,0.25);
+
+        0 20px 70px
+        rgba(0,0,0,0.3),
+
+        0 0 50px
+        rgba(224,168,255,0.25);
+
 }
+
 
 .final-card h2 {
-    font-size: clamp(35px, 7vw, 60px);
+
+    font-size:
+        clamp(35px, 7vw, 60px);
+
     color: #ffeaff;
+
     margin-bottom: 25px;
+
 }
+
 
 .final-card p {
+
     font-size: 1.15rem;
+
     line-height: 1.8;
+
     color: #f8e8ff;
+
 }
 
+
 .final-heart {
-    font-size: 60px;
-    margin-top: 25px;
 
     display: inline-block;
+
+    font-size: 65px;
+
+    margin-top: 25px;
+
+    filter:
+
+        drop-shadow(
+            0 0 10px #ffb4ed
+        )
+
+        drop-shadow(
+            0 0 25px #ff82d6
+        );
 
     animation:
         heartBeat 1.2s infinite;
 
-    filter:
-        drop-shadow(0 0 10px #ffb4ed)
-        drop-shadow(0 0 25px #ff82d6);
 }
+
 
 @keyframes heartBeat {
 
     0%, 100% {
-        transform: scale(1);
+
+        transform:
+            scale(1);
+
     }
 
     25% {
-        transform: scale(1.2);
+
+        transform:
+            scale(1.2);
+
     }
 
     50% {
-        transform: scale(1);
+
+        transform:
+            scale(1);
+
     }
 
     75% {
-        transform: scale(1.15);
+
+        transform:
+            scale(1.15);
+
     }
+
 }
 
 
-/* =========================
+/* =========================================
    CONFETTI
-========================= */
+========================================= */
 
 .confetti {
+
     position: fixed;
 
-    width: 10px;
-    height: 10px;
+    top: -30px;
 
-    top: -20px;
+    width: 12px;
+
+    height: 12px;
 
     z-index: 100;
 
     pointer-events: none;
 
-    animation: confettiFall linear forwards;
+    animation:
+        confettiFall
+        linear
+        forwards;
+
 }
+
 
 @keyframes confettiFall {
 
     0% {
+
         transform:
             translateY(0)
             rotate(0deg);
+
         opacity: 1;
+
     }
 
     100% {
+
         transform:
             translateY(110vh)
             rotate(720deg);
+
         opacity: 0;
+
     }
+
 }
 
 
-/* =========================
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
 @media (max-width: 600px) {
 
+
     .hero {
-        padding-top: 50px;
+
+        padding:
+            50px 18px;
+
     }
+
 
     .hero-photo {
+
         width: 190px;
+
         height: 190px;
+
     }
+
 
     .small-title {
-        font-size: 0.9rem;
+
+        font-size: 0.85rem;
+
+        letter-spacing: 3px;
+
     }
+
 
     .subtitle {
+
         font-size: 1rem;
+
     }
+
 
     .letter-card {
-        padding: 30px 20px;
+
+        padding:
+            30px 20px;
+
     }
+
+
+    .letter-text {
+
+        font-size: 1rem;
+
+    }
+
 
     .memory-card {
+
         padding: 15px;
+
     }
+
 
     .memory-message {
+
         font-size: 1rem;
-        min-height: 120px;
+
+        min-height: 130px;
+
     }
 
-    .reason {
-        padding: 20px;
-    }
 
     .heart {
-        font-size: 20px;
+
+        font-size: 21px;
+
     }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ==================================================
+<!-- =========================================
      MOVING HEARTS
-================================================== -->
+========================================= -->
 
 <div class="hearts-container">
 
-    <div class="heart" style="left:2%; animation-duration:10s; animation-delay:0s;">💜</div>
-    <div class="heart" style="left:8%; animation-duration:13s; animation-delay:2s;">💗</div>
-    <div class="heart" style="left:15%; animation-duration:9s; animation-delay:4s;">💕</div>
-    <div class="heart" style="left:22%; animation-duration:15s; animation-delay:1s;">💜</div>
-    <div class="heart" style="left:29%; animation-duration:11s; animation-delay:5s;">💖</div>
-    <div class="heart" style="left:36%; animation-duration:14s; animation-delay:3s;">💗</div>
-    <div class="heart" style="left:43%; animation-duration:10s; animation-delay:6s;">💜</div>
-    <div class="heart" style="left:50%; animation-duration:16s; animation-delay:2s;">💕</div>
-    <div class="heart" style="left:57%; animation-duration:12s; animation-delay:7s;">💖</div>
-    <div class="heart" style="left:64%; animation-duration:9s; animation-delay:1s;">💜</div>
-    <div class="heart" style="left:71%; animation-duration:14s; animation-delay:4s;">💗</div>
-    <div class="heart" style="left:78%; animation-duration:11s; animation-delay:8s;">💕</div>
-    <div class="heart" style="left:85%; animation-duration:15s; animation-delay:2s;">💜</div>
-    <div class="heart" style="left:92%; animation-duration:10s; animation-delay:5s;">💖</div>
+    <div class="heart"
+         style="left:3%; animation-duration:10s;">
+        💜
+    </div>
 
-    <div class="heart" style="left:5%; animation-duration:12s; animation-delay:7s;">💗</div>
-    <div class="heart" style="left:18%; animation-duration:16s; animation-delay:9s;">💜</div>
-    <div class="heart" style="left:33%; animation-duration:13s; animation-delay:10s;">💕</div>
-    <div class="heart" style="left:48%; animation-duration:11s; animation-delay:11s;">💖</div>
-    <div class="heart" style="left:63%; animation-duration:15s; animation-delay:9s;">💜</div>
-    <div class="heart" style="left:80%; animation-duration:13s; animation-delay:12s;">💗</div>
-    <div class="heart" style="left:95%; animation-duration:16s; animation-delay:10s;">💕</div>
+    <div class="heart"
+         style="left:10%; animation-duration:13s; animation-delay:2s;">
+        💗
+    </div>
+
+    <div class="heart"
+         style="left:18%; animation-duration:9s; animation-delay:4s;">
+        💕
+    </div>
+
+    <div class="heart"
+         style="left:27%; animation-duration:15s; animation-delay:1s;">
+        💜
+    </div>
+
+    <div class="heart"
+         style="left:36%; animation-duration:11s; animation-delay:5s;">
+        💖
+    </div>
+
+    <div class="heart"
+         style="left:45%; animation-duration:14s; animation-delay:3s;">
+        💗
+    </div>
+
+    <div class="heart"
+         style="left:54%; animation-duration:10s; animation-delay:6s;">
+        💜
+    </div>
+
+    <div class="heart"
+         style="left:63%; animation-duration:16s; animation-delay:2s;">
+        💕
+    </div>
+
+    <div class="heart"
+         style="left:72%; animation-duration:12s; animation-delay:7s;">
+        💖
+    </div>
+
+    <div class="heart"
+         style="left:81%; animation-duration:9s; animation-delay:1s;">
+        💜
+    </div>
+
+    <div class="heart"
+         style="left:90%; animation-duration:14s; animation-delay:4s;">
+        💗
+    </div>
 
 </div>
 
 
-<!-- ==================================================
+<!-- =========================================
      SPARKLES
-================================================== -->
+========================================= -->
 
 <div class="sparkles-container">
 
-    <div class="sparkle" style="left:10%; top:15%; animation-delay:0s;">✦</div>
-    <div class="sparkle" style="left:25%; top:30%; animation-delay:1s;">✧</div>
-    <div class="sparkle" style="left:40%; top:10%; animation-delay:0.5s;">✦</div>
-    <div class="sparkle" style="left:60%; top:25%; animation-delay:1.5s;">✧</div>
-    <div class="sparkle" style="left:75%; top:12%; animation-delay:0.7s;">✦</div>
-    <div class="sparkle" style="left:90%; top:35%; animation-delay:1.2s;">✧</div>
+    <div class="sparkle"
+         style="left:10%; top:15%;">
+        ✦
+    </div>
+
+    <div class="sparkle"
+         style="left:25%; top:30%; animation-delay:1s;">
+        ✧
+    </div>
+
+    <div class="sparkle"
+         style="left:40%; top:10%; animation-delay:0.5s;">
+        ✦
+    </div>
+
+    <div class="sparkle"
+         style="left:60%; top:25%; animation-delay:1.5s;">
+        ✧
+    </div>
+
+    <div class="sparkle"
+         style="left:75%; top:12%; animation-delay:0.7s;">
+        ✦
+    </div>
+
+    <div class="sparkle"
+         style="left:90%; top:35%; animation-delay:1.2s;">
+        ✧
+    </div>
 
 </div>
 
 
-<!-- ==================================================
+<!-- =========================================
      MAIN CONTENT
-================================================== -->
+========================================= -->
 
 <div class="content">
 
 
-<!-- ================= HERO ================= -->
+<!-- =========================================
+     HERO
+========================================= -->
 
 <section class="hero">
 
     <div class="hero-content">
 
+
         <img
-            src="IMG_20260914_153341.jpg"
+            src="./IMG_20260914_153341.jpg"
             alt="Pragna"
             class="hero-photo"
         >
 
+
         <div class="small-title">
+
             A Very Special Day
+
         </div>
+
 
         <div class="big-number">
+
             18
+
         </div>
+
 
         <div class="name">
+
             Pragna
+
         </div>
 
+
         <div class="subtitle">
+
             ✨ Happy 18th Birthday ✨
+
         </div>
+
 
         <button
             class="surprise-button"
             onclick="showSurprise()"
         >
+
             Open Your Surprise 💜
+
         </button>
+
 
     </div>
 
 </section>
 
 
-<!-- ================= LETTER ================= -->
+<!-- =========================================
+     LETTER
+========================================= -->
 
 <section class="letter-section">
 
     <div class="letter-card">
 
+
         <h2 class="section-title">
+
             💌 A Letter For You
+
         </h2>
+
 
         <p class="letter-text">
 
@@ -878,116 +1304,202 @@ body {
 
         </p>
 
+
     </div>
 
 </section>
 
 
-<!-- ================= 18 REASONS ================= -->
+<!-- =========================================
+     MEMORIES
+========================================= -->
 
-<section class="reasons-section">
+<section id="memories-section">
 
-    <div class="reasons-container">
 
-        <h2 class="section-title">
-            💜 18 Little Reasons
+    <h2 class="section-title">
+
+        📸 18 Years, 18 Memories ♡
+
+    </h2>
+
+
+    <p class="memories-subtitle">
+
+        One picture at a time…
+        because every memory deserves its own moment. 💜
+
+    </p>
+
+
+    <div class="memory-card">
+
+
+        <img
+            id="memoryImage"
+            class="memory-image"
+            src="./IMG-20231123-WA0066.jpg"
+            alt="Pragna memory"
+        >
+
+
+        <div
+            id="memoryMessage"
+            class="memory-message"
+        >
+
+        </div>
+
+
+        <div class="memory-controls">
+
+
+            <button
+                class="memory-button"
+                onclick="previousMemory()"
+            >
+
+                ← Previous
+
+            </button>
+
+
+            <div
+                id="memoryCount"
+                class="memory-count"
+            >
+
+                1 / 8
+
+            </div>
+
+
+            <button
+                class="memory-button"
+                onclick="nextMemory()"
+            >
+
+                Next →
+
+            </button>
+
+
+        </div>
+
+
+        <div
+            id="memoryDots"
+            class="memory-dots"
+        >
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FINAL MESSAGE
+========================================= -->
+
+<section class="final-section">
+
+
+    <div class="final-card">
+
+
+        <h2>
+
+            Happy 18th, Pragna! 🎂
+
         </h2>
 
-        <div class="reasons">
 
-            <div class="reason">
-                <div class="reason-number">01</div>
-                <div class="reason-text">
-                    Your beautiful smile can brighten any day.
-                </div>
-            </div>
+        <p>
 
-            <div class="reason">
-                <div class="reason-number">02</div>
-                <div class="reason-text">
-                    You make ordinary moments feel special.
-                </div>
-            </div>
+            May your 18th year be filled with
+            happiness, adventures, beautiful surprises,
+            unforgettable memories and everything your
+            heart wishes for. 💜
 
-            <div class="reason">
-                <div class="reason-number">03</div>
-                <div class="reason-text">
-                    You have a heart full of kindness.
-                </div>
-            </div>
+            <br><br>
 
-            <div class="reason">
-                <div class="reason-number">04</div>
-                <div class="reason-text">
-                    You are growing into an amazing person.
-                </div>
-            </div>
+            Keep smiling.
+            Keep dreaming.
+            Keep being the amazing person you are.
 
-            <div class="reason">
-                <div class="reason-number">05</div>
-                <div class="reason-text">
-                    Your laughter is impossible not to love.
-                </div>
-            </div>
+            <br><br>
 
-            <div class="reason">
-                <div class="reason-number">06</div>
-                <div class="reason-text">
-                    You make memories worth remembering.
-                </div>
-            </div>
+            Here's to 18 beautiful years —
+            and to all the beautiful years still waiting for you. ✨
 
-            <div class="reason">
-                <div class="reason-number">07</div>
-                <div class="reason-text">
-                    You always bring your own special energy.
-                </div>
-            </div>
+        </p>
 
-            <div class="reason">
-                <div class="reason-number">08</div>
-                <div class="reason-text">
-                    You deserve every beautiful thing life has to offer.
-                </div>
-            </div>
 
-            <div class="reason">
-                <div class="reason-number">09</div>
-                <div class="reason-text">
-                    You are stronger than you sometimes realize.
-                </div>
-            </div>
+        <div class="final-heart">
 
-            <div class="reason">
-                <div class="reason-number">10</div>
-                <div class="reason-text">
-                    You have so many wonderful chapters ahead.
-                </div>
-            </div>
+            💜
 
-            <div class="reason">
-                <div class="reason-number">11</div>
-                <div class="reason-text">
-                    You make the people around you happier.
-                </div>
-            </div>
+        </div>
 
-            <div class="reason">
-                <div class="reason-number">12</div>
-                <div class="reason-text">
-                    You are wonderfully and uniquely you.
-                </div>
-            </div>
 
-            <div class="reason">
-                <div class="reason-number">13</div>
-                <div class="reason-text">
-                    Your dreams deserve to be chased.
-                </div>
-            </div>
+        <br>
 
-            <div class="reason">
-                <div class="reason-number">14</div>
-                <div class="reason-text">
-                    You have so much potential waiting ahead.
-        
+
+        <button
+            class="surprise-button"
+            onclick="showMessage()"
+        >
+
+            One Last Surprise ✨
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+</div>
+
+
+<script>
+
+/* =========================================
+   PHOTO + MESSAGE DATA
+========================================= */
+
+const memories = [
+
+    {
+        photo: "./IMG-20231123-WA0066.jpg",
+
+        message:
+        "18 years of your life, and so many beautiful moments already written. May this be the beginning of your most wonderful chapter yet. ♡"
+    },
+
+
+    {
+        photo: "./IMG-20240728-WA0012.jpg",
+
+        message:
+        "Some memories become precious simply because they were shared with someone special. I hope we make countless more together. 💜"
+    },
+
+
+    {
+        photo: "./IMG-20240728-WA0020.jpg",
+
+        message:
+        "You are stepping into adulthood today, but no matter how much you grow, you will always be the little sister who means so much to me. ♡"
+    },
+
+
+    {
+        photo: "./IMG-20241007-WA0043.jpg",
+
+        message:
+        "May the girl in this picture alw
