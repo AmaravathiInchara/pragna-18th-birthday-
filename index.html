@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 18th Birthday Pragna 💜</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      color: #4b2868;
+      background: linear-gradient(135deg, #eadcff, #fff7ff, #d8bff0);
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+    }
+
+    .card {
+      max-width: 750px;
+      padding: 55px 25px;
+      border-radius: 35px;
+      background: rgba(255,255,255,0.55);
+      box-shadow: 0 20px 60px rgba(75,40,104,0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .small {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: #8b62a8;
+    }
+
+    .number {
+      font-size: 150px;
+      line-height: 1;
+      color: #8c5aaa;
+      opacity: 0.35;
+      margin: 15px 0;
+    }
+
+    h1 {
+      font-size: 65px;
+      line-height: 0.95;
+      margin: 10px 0;
+      color: #45205f;
+    }
+
+    h1 span {
+      color: #9a60ba;
+      font-style: italic;
+    }
+
+    .intro {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #725681;
+      max-width: 550px;
+      margin: 25px auto;
+    }
+
+    button {
+      border: none;
+      padding: 15px 28px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #703b91, #ae70ca);
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(91,45,120,0.25);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    h2 {
+      font-size: 45px;
+      color: #48235f;
+    }
+
+    .letter {
+      background: rgba(255,255,255,0.55);
+      padding: 40px;
+      border-radius: 25px;
+      line-height: 1.9;
+      font-size: 18px;
+      box-shadow: 0 15px 40px rgba(70,35,95,0.1);
+    }
+
+    .signature {
+      text-align: right;
+      font-size: 22px;
+      color: #7c429b;
+    }
+
+    .reasons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .reason {
+      padding: 22px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(70,35,95,0.08);
+    }
+
+    .reason b {
+      color: #a06abb;
+      font-size: 12px;
+    }
+
+    .reason h3 {
+      margin: 8px 0;
+      color: #65367f;
+    }
+
+    .reason p {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #77627f;
+    }
+
+    .surprise {
+      min-height: 500px;
+    }
+
+    #message {
+      display: none;
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.75);
+      box-shadow: 0 15px 40px rgba(70,35,95,0.12);
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 40px 20px;
+      color: #80658d;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      color: rgba(130,70,160,0.35);
+      animation: float 8s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media(max-width:700px) {
+      h1 {
+        font-size: 48px;
+      }
+
+      .number {
+        font-size: 110px;
+      }
+
+      .reasons {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      h2 {
+        font-size: 36px;
+      }
+    }
+
+    @media(max-width:450px) {
+      .reasons {
+        grid-template-columns: 1fr;
+      }
+
+      .letter {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero">
+    <div class="card">
+      <div class="small">A little surprise for someone special ✨</div>
+
+      <div class="number">18</div>
+
+      <h1>
+        Happy Birthday,<br>
+        <span>Pragna</span> 💜
+      </h1>
+
+      <p class="intro">
+        Today begins a beautiful new chapter of your life.
+        May your 18th year be filled with laughter, dreams,
+        wonderful memories and endless happiness. ✨
+      </p>
+
+      <button onclick="showSurprise()">
+        Open Your Surprise 💜
+      </button>
+    </div>
+  </div>
+
+
+  <section>
+
+    <h2>♡ A Letter For You ♡</h2>
+
+    <div class="letter">
+
+      <p>Dear Pragna,</p>
+
+      <p>
+        Happy 18th birthday to one of the most precious people
+        in my life. Watching you grow into the beautiful person
+        you are today makes me so happy and proud.
+      </p>
+
+      <p>
+        I hope this new chapter brings you countless reasons
+        to smile, beautiful adventures, amazing people and
+        dreams that slowly turn into reality.
+      </p>
+
+      <p>
+        No matter how much we grow or where life takes us,
+        always remember that I'll be there to laugh with you,
+        annoy you, support you and make beautiful memories
+        with you.
+      </p>
+
+      <p>
+        Keep smiling, keep dreaming and always be yourself.
+        You deserve all the beautiful things life has to offer. 💕
+      </p>
+
+      <p class="signature">
+        With lots of love,<br>
+        <b>Inchara ♡</b>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section>
+
+    <h2>✨ 18 Little Reasons ✨</h2>
+
+    <div class="reasons">
+
+      <div class="reason"><b>01</b><h3>Your Smile</h3><p>It makes ordinary moments brighter.</p></div>
+
+      <div class="reason"><b>02</b><h3>Your Heart</h3><p>You care more than you realize.</p></div>
+
+      <div class="reason"><b>03</b><h3>Your Laugh</h3><p>One of my favorite sounds.</p></div>
+
+      <div class="reason"><b>04</b><h3>Your Kindness</h3><p>Your little acts mean so much.</p></div>
+
+      <div class="reason"><b>05</b><h3>Your Strength</h3><p>You are stronger than you think.</p></div>
+
+      <div class="reason"><b>06</b><h3>Your Dreams</h3><p>Never stop believing in them.</p></div>
+
+      <div class="reason"><b>07</b><h3>Your Energy</h3><p>You bring your own sparkle.</p></div>
+
+      <div class="reason"><b>08</b><h3>Your Honesty</h3><p>You are wonderfully yourself.</p></div>
+
+      <div class="reason"><b>09</b><h3>Your Silly Side</h3><p>The funniest memories come from it.</p></div>
+
+      <div class="reason"><b>10</b><h3>Your Courage</h3><p>Keep moving forward.</p></div>
+
+      <div class="reason"><b>11</b><h3>Your Warmth</h3><p>You make people feel comfortable.</p></div>
+
+      <div class="reason"><b>12</b><h3>Your Confidence</h3><p>Keep becoming your amazing self.</p></div>
+
+      <div class="reason"><b>13</b><h3>Your Imagination</h3><p>You make moments magical.</p></div>
+
+      <div class="reason"><b>14</b><h3>Your Patience</h3><p>Even when I'm annoying! 😄</p></div>
+
+      <div class="reason"><b>15</b><h3>Your Uniqueness</h3><p>There is nobody quite like you.</p></div>
+
+      <div class="reason"><b>16</b><h3>Our
