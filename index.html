@@ -1,12 +1,14 @@
-              
-      
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Happy 18th Birthday Pragna 💜</title>
+
 
   <style>
 
@@ -14,308 +16,994 @@
       box-sizing: border-box;
     }
 
+
     body {
+
       margin: 0;
+
       font-family: Georgia, serif;
+
       color: #4b2868;
-      background: linear-gradient(135deg, #eadcff, #fff7ff, #d8bff0);
+
+      background:
+        linear-gradient(
+          135deg,
+          #eadcff,
+          #fff7ff,
+          #d8bff0,
+          #f4ddff
+        );
+
+      background-size: 400% 400%;
+
+      animation: backgroundMove 12s ease infinite;
+
       text-align: center;
+
       overflow-x: hidden;
+
     }
 
+
+    /* ========================= */
+    /* MOVING BACKGROUND */
+    /* ========================= */
+
+    @keyframes backgroundMove {
+
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+
+    }
+
+
+    /* ========================= */
     /* HERO */
+    /* ========================= */
 
     .hero {
+
       min-height: 100vh;
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       padding: 25px;
+
     }
+
 
     .card {
+
       max-width: 750px;
+
       padding: 55px 25px;
+
       border-radius: 35px;
-      background: rgba(255,255,255,0.55);
-      box-shadow: 0 20px 60px rgba(75,40,104,0.2);
+
+      background:
+        rgba(255,255,255,0.55);
+
+      box-shadow:
+        0 20px 60px rgba(75,40,104,0.2);
+
       backdrop-filter: blur(10px);
+
+      animation: cardFloat 5s ease-in-out infinite;
+
     }
+
+
+    @keyframes cardFloat {
+
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-7px);
+      }
+
+    }
+
 
     .small {
+
       letter-spacing: 3px;
+
       text-transform: uppercase;
+
       font-size: 12px;
+
       color: #8b62a8;
+
     }
+
 
     .number {
+
       font-size: 150px;
+
       line-height: 1;
+
       color: #8c5aaa;
+
       opacity: 0.35;
+
       margin: 15px 0;
+
+      animation: numberGlow 3s ease-in-out infinite;
+
     }
 
+
+    @keyframes numberGlow {
+
+      0%,100% {
+
+        opacity: 0.25;
+
+        transform: scale(1);
+
+      }
+
+      50% {
+
+        opacity: 0.5;
+
+        transform: scale(1.06);
+
+      }
+
+    }
+
+
+    /* ========================= */
     /* MAIN PHOTO */
+    /* ========================= */
 
     .main-photo {
+
       width: 250px;
+
       height: 250px;
+
       object-fit: cover;
+
       border-radius: 50%;
-      border: 8px solid rgba(255,255,255,0.85);
-      box-shadow: 0 15px 40px rgba(75,40,104,0.25);
+
+      border: 8px solid
+        rgba(255,255,255,0.85);
+
+      box-shadow:
+        0 15px 40px rgba(75,40,104,0.25);
+
       margin: 10px auto 25px;
+
       display: block;
+
+      animation:
+        photoFloat 4s ease-in-out infinite,
+        photoGlow 3s ease-in-out infinite;
+
     }
+
+
+    @keyframes photoFloat {
+
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+
+    }
+
+
+    @keyframes photoGlow {
+
+      0%,100% {
+
+        box-shadow:
+          0 15px 40px
+          rgba(75,40,104,0.25);
+
+      }
+
+      50% {
+
+        box-shadow:
+          0 15px 60px
+          rgba(160,90,190,0.6);
+
+      }
+
+    }
+
+
+    /* ========================= */
+    /* HEADINGS */
+    /* ========================= */
 
     h1 {
+
       font-size: 65px;
+
       line-height: 0.95;
+
       margin: 10px 0;
+
       color: #45205f;
+
     }
+
 
     h1 span {
+
       color: #9a60ba;
+
       font-style: italic;
+
+      animation: nameGlow 2.5s ease-in-out infinite;
+
     }
+
+
+    @keyframes nameGlow {
+
+      0%,100% {
+
+        text-shadow:
+          0 0 5px
+          rgba(170,100,200,0.2);
+
+      }
+
+      50% {
+
+        text-shadow:
+          0 0 25px
+          rgba(170,100,200,0.7);
+
+      }
+
+    }
+
 
     .intro {
+
       font-size: 18px;
+
       line-height: 1.8;
+
       color: #725681;
+
       max-width: 550px;
+
       margin: 25px auto;
+
     }
+
+
+    /* ========================= */
+    /* BUTTONS */
+    /* ========================= */
 
     button {
+
       border: none;
+
       padding: 15px 28px;
+
       border-radius: 30px;
-      background: linear-gradient(135deg, #703b91, #ae70ca);
+
+      background:
+        linear-gradient(
+          135deg,
+          #703b91,
+          #ae70ca
+        );
+
       color: white;
+
       font-size: 15px;
+
       cursor: pointer;
-      box-shadow: 0 10px 25px rgba(91,45,120,0.25);
+
+      box-shadow:
+        0 10px 25px
+        rgba(91,45,120,0.25);
+
       margin: 5px;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
     }
+
 
     button:hover {
-      transform: scale(1.03);
+
+      transform:
+        translateY(-3px)
+        scale(1.04);
+
+      box-shadow:
+        0 15px 30px
+        rgba(91,45,120,0.35);
+
     }
+
+
+    /* ========================= */
+    /* SECTIONS */
+    /* ========================= */
 
     section {
+
       max-width: 1000px;
+
       margin: auto;
+
       padding: 80px 20px;
+
     }
+
 
     h2 {
+
       font-size: 45px;
+
       color: #48235f;
+
     }
 
+
+    /* ========================= */
     /* LETTER */
+    /* ========================= */
 
     .letter {
-      background: rgba(255,255,255,0.55);
+
+      background:
+        rgba(255,255,255,0.55);
+
       padding: 40px;
+
       border-radius: 25px;
+
       line-height: 1.9;
+
       font-size: 18px;
-      box-shadow: 0 15px 40px rgba(70,35,95,0.1);
+
+      box-shadow:
+        0 15px 40px
+        rgba(70,35,95,0.1);
+
+      animation:
+        cardFloat 6s ease-in-out infinite;
+
     }
+
 
     .signature {
+
       text-align: right;
+
       font-size: 22px;
+
       color: #7c429b;
+
     }
 
+
+    /* ========================= */
     /* MEMORY SECTION */
+    /* ========================= */
 
     .memory-box {
+
       max-width: 650px;
+
       margin: 35px auto;
-      background: rgba(255,255,255,0.6);
+
+      background:
+        rgba(255,255,255,0.65);
+
       padding: 25px;
+
       border-radius: 30px;
-      box-shadow: 0 15px 40px rgba(70,35,95,0.15);
+
+      box-shadow:
+        0 15px 40px
+        rgba(70,35,95,0.15);
+
+      animation:
+        memoryBoxGlow 4s ease-in-out infinite;
+
     }
+
+
+    @keyframes memoryBoxGlow {
+
+      0%,100% {
+
+        box-shadow:
+          0 15px 40px
+          rgba(70,35,95,0.15);
+
+      }
+
+      50% {
+
+        box-shadow:
+          0 15px 55px
+          rgba(140,80,170,0.3);
+
+      }
+
+    }
+
 
     .memory-photo {
+
       width: 100%;
+
       max-width: 520px;
+
       height: 500px;
+
       object-fit: cover;
+
       border-radius: 22px;
-      box-shadow: 0 10px 30px rgba(70,35,95,0.18);
+
+      box-shadow:
+        0 10px 30px
+        rgba(70,35,95,0.18);
+
     }
+
+
+    .photo-change {
+
+      animation:
+        photoChange 0.8s ease;
+
+    }
+
+
+    @keyframes photoChange {
+
+      0% {
+
+        opacity: 0;
+
+        transform:
+          scale(0.92)
+          translateY(20px);
+
+      }
+
+      100% {
+
+        opacity: 1;
+
+        transform:
+          scale(1)
+          translateY(0);
+
+      }
+
+    }
+
 
     .memory-message {
+
       font-size: 19px;
+
       line-height: 1.8;
+
       color: #654675;
+
       margin: 25px auto 15px;
+
       max-width: 520px;
+
     }
+
 
     .memory-count {
+
       color: #9670a9;
+
       font-family: Arial, sans-serif;
+
       font-size: 14px;
+
       margin-bottom: 20px;
+
     }
+
 
     .memory-buttons {
+
       display: flex;
+
       justify-content: center;
+
       gap: 10px;
+
       flex-wrap: wrap;
+
     }
 
-    /* 18 REASONS */
+
+    /* ========================= */
+    /* PHOTO DOTS */
+    /* ========================= */
+
+    .dots {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      margin: 20px 0;
+
+    }
+
+
+    .dot {
+
+      width: 9px;
+
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: #cdb1dc;
+
+      transition:
+        transform 0.3s,
+        background 0.3s;
+
+    }
+
+
+    .dot.active {
+
+      background: #79439b;
+
+      transform: scale(1.5);
+
+    }
+
+
+    /* ========================= */
+    /* REASONS */
+    /* ========================= */
 
     .reasons {
+
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3,1fr);
+
       gap: 15px;
+
     }
+
 
     .reason {
+
       padding: 22px;
-      background: rgba(255,255,255,0.6);
+
+      background:
+        rgba(255,255,255,0.6);
+
       border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(70,35,95,0.08);
+
+      box-shadow:
+        0 8px 25px
+        rgba(70,35,95,0.08);
+
+      transition:
+        transform 0.3s ease;
+
     }
+
+
+    .reason:hover {
+
+      transform:
+        translateY(-8px);
+
+    }
+
 
     .reason b {
+
       color: #a06abb;
+
       font-size: 12px;
+
     }
+
 
     .reason h3 {
+
       margin: 8px 0;
+
       color: #65367f;
+
     }
+
 
     .reason p {
+
       font-family: Arial, sans-serif;
+
       font-size: 13px;
+
       color: #77627f;
+
     }
 
+
+    /* ========================= */
     /* SURPRISE */
+    /* ========================= */
 
     .surprise {
+
       min-height: 500px;
+
     }
+
 
     #message {
+
       display: none;
+
       max-width: 600px;
+
       margin: 30px auto;
+
       padding: 30px;
+
       border-radius: 25px;
-      background: rgba(255,255,255,0.75);
-      box-shadow: 0 15px 40px rgba(70,35,95,0.12);
+
+      background:
+        rgba(255,255,255,0.75);
+
+      box-shadow:
+        0 15px 40px
+        rgba(70,35,95,0.12);
+
       font-size: 20px;
+
       line-height: 1.8;
+
+      animation:
+        finalMessage 1s ease;
+
     }
 
-    /* FLOATING HEARTS */
+
+    @keyframes finalMessage {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          scale(0.8)
+          translateY(30px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          scale(1)
+          translateY(0);
+
+      }
+
+    }
+
+
+    /* ========================= */
+    /* FOOTER */
+    /* ========================= */
 
     footer {
+
       padding: 40px 20px;
+
       color: #80658d;
+
       font-family: Arial, sans-serif;
+
       font-size: 13px;
+
     }
 
+
+    /* ========================= */
+    /* FLOATING HEARTS */
+    /* ========================= */
+
     .heart {
+
       position: fixed;
+
       bottom: -30px;
-      color: rgba(130,70,160,0.35);
-      animation: float 8s linear infinite;
+
+      color:
+        rgba(130,70,160,0.35);
+
+      animation:
+        float 8s linear forwards;
+
       pointer-events: none;
+
+      z-index: 9999;
+
     }
+
 
     @keyframes float {
 
       from {
-        transform: translateY(0) rotate(0);
+
+        transform:
+          translateY(0)
+          rotate(0);
+
         opacity: 0;
+
       }
 
       20% {
+
         opacity: 1;
+
       }
 
       to {
-        transform: translateY(-110vh) rotate(360deg);
+
+        transform:
+          translateY(-110vh)
+          rotate(360deg);
+
         opacity: 0;
+
       }
 
     }
 
+
+    /* ========================= */
+    /* SPARKLES */
+    /* ========================= */
+
+    .sparkle {
+
+      position: fixed;
+
+      bottom: -20px;
+
+      pointer-events: none;
+
+      z-index: 9999;
+
+      animation:
+        sparkleFloat 5s linear forwards;
+
+    }
+
+
+    @keyframes sparkleFloat {
+
+      0% {
+
+        transform:
+          translateY(0)
+          scale(0.5)
+          rotate(0);
+
+        opacity: 0;
+
+      }
+
+      15% {
+
+        opacity: 1;
+
+      }
+
+      100% {
+
+        transform:
+          translateY(-100vh)
+          scale(1.2)
+          rotate(360deg);
+
+        opacity: 0;
+
+      }
+
+    }
+
+
+    /* ========================= */
+    /* CONFETTI */
+    /* ========================= */
+
+    .confetti {
+
+      position: fixed;
+
+      top: -20px;
+
+      pointer-events: none;
+
+      z-index: 10000;
+
+      animation:
+        confettiFall 4s linear forwards;
+
+    }
+
+
+    @keyframes confettiFall {
+
+      0% {
+
+        transform:
+          translateY(0)
+          rotate(0);
+
+        opacity: 1;
+
+      }
+
+      100% {
+
+        transform:
+          translateY(110vh)
+          rotate(720deg);
+
+        opacity: 0;
+
+      }
+
+    }
+
+
+    /* ========================= */
     /* MOBILE */
+    /* ========================= */
 
     @media(max-width:700px) {
 
       h1 {
+
         font-size: 48px;
+
       }
+
 
       .number {
+
         font-size: 110px;
+
       }
+
 
       .main-photo {
+
         width: 210px;
+
         height: 210px;
+
       }
+
 
       .memory-photo {
+
         height: 430px;
+
       }
+
 
       .reasons {
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+          repeat(2,1fr);
+
       }
 
+
       h2 {
+
         font-size: 36px;
+
       }
 
     }
 
+
     @media(max-width:450px) {
 
       .reasons {
+
         grid-template-columns: 1fr;
+
       }
+
 
       .letter {
+
         padding: 25px;
+
       }
+
 
       .memory-box {
+
         padding: 15px;
+
       }
+
 
       .memory-photo {
+
         height: 400px;
+
       }
 
+
       .memory-message {
+
         font-size: 17px;
+
+      }
+
+
+      .main-photo {
+
+        width: 200px;
+
+        height: 200px;
+
       }
 
     }
 
   </style>
+
 </head>
 
 
@@ -331,14 +1019,18 @@
     <div class="card">
 
       <div class="small">
+
         A little surprise for someone special ✨
+
       </div>
+
 
       <div class="number">
+
         18
+
       </div>
 
-      <!-- MAIN BIRTHDAY PHOTO -->
 
       <img
         src="IMG_20260914_153341.jpg"
@@ -346,10 +1038,15 @@
         class="main-photo"
       >
 
+
       <h1>
+
         Happy Birthday,<br>
+
         <span>Pragna</span> 💜
+
       </h1>
+
 
       <p class="intro">
 
@@ -359,8 +1056,11 @@
 
       </p>
 
+
       <button onclick="showSurprise()">
+
         Open Your Surprise 💜
+
       </button>
 
     </div>
@@ -375,14 +1075,20 @@
   <section>
 
     <h2>
+
       ♡ A Letter For You ♡
+
     </h2>
+
 
     <div class="letter">
 
       <p>
+
         Dear Pragna,
+
       </p>
+
 
       <p>
 
@@ -392,6 +1098,7 @@
 
       </p>
 
+
       <p>
 
         I hope this new chapter brings you countless reasons
@@ -399,6 +1106,7 @@
         dreams that slowly turn into reality.
 
       </p>
+
 
       <p>
 
@@ -409,6 +1117,7 @@
 
       </p>
 
+
       <p>
 
         Keep smiling, keep dreaming and always be yourself.
@@ -416,9 +1125,11 @@
 
       </p>
 
+
       <p class="signature">
 
         With lots of love,<br>
+
         <b>Inchara ♡</b>
 
       </p>
@@ -429,57 +1140,78 @@
 
 
   <!-- ========================= -->
-  <!-- ONE PHOTO AT A TIME -->
+  <!-- MEMORIES -->
   <!-- ========================= -->
 
-  <section>
+  <section id="memories-section">
 
     <h2>
+
       📸 18 Years, 18 Memories ♡
+
     </h2>
+
 
     <p class="intro">
 
-      Every picture holds a little piece of a beautiful
-      story. Here are some memories for your special day. 💜
+      Every picture holds a little piece of our story.
+      Take a moment and enjoy these memories. 💜
 
     </p>
 
 
     <div class="memory-box">
 
+
       <img
         id="memoryPhoto"
         class="memory-photo"
         src="IMG-20231123-WA0066.jpg"
-        alt="Memory"
+        alt="Pragna memory"
       >
+
 
       <p
         id="memoryMessage"
         class="memory-message"
       >
+
         18 years of your life, and so many beautiful moments
         already written. May this be the beginning of your
         most wonderful chapter yet. ♡
+
       </p>
+
 
       <div
         id="memoryCount"
         class="memory-count"
       >
+
         Memory 1 of 8
+
       </div>
+
+
+      <div
+        id="dots"
+        class="dots"
+      ></div>
 
 
       <div class="memory-buttons">
 
         <button onclick="previousMemory()">
+
           ← Previous
+
         </button>
 
+
         <button onclick="nextMemory()">
-          Next → 
+
+          Next →
+
         </button>
 
       </div>
@@ -490,14 +1222,17 @@
 
 
   <!-- ========================= -->
-  <!-- 18 LITTLE REASONS -->
+  <!-- 18 REASONS -->
   <!-- ========================= -->
 
   <section>
 
     <h2>
+
       ✨ 18 Little Reasons ✨
+
     </h2>
+
 
     <div class="reasons">
 
@@ -640,8 +1375,11 @@
   <section class="surprise">
 
     <h2>
+
       🎁 One Last Surprise
+
     </h2>
+
 
     <p class="intro">
 
@@ -650,16 +1388,22 @@
 
     </p>
 
+
     <button onclick="showMessage()">
+
       Make My Birthday Wish 💜
+
     </button>
 
 
     <div id="message">
 
       <b>
+
         18 looks beautiful on you. ♡
+
       </b>
+
 
       <p>
 
@@ -669,8 +1413,11 @@
 
       </p>
 
+
       <b>
+
         Happy 18th Birthday, Pragna! 🎂💜
+
       </b>
 
     </div>
@@ -698,12 +1445,14 @@
   <script>
 
 
+    /* ========================= */
     /* OPEN SURPRISE */
+    /* ========================= */
 
     function showSurprise() {
 
       document
-        .querySelector(".surprise")
+        .getElementById("memories-section")
         .scrollIntoView({
           behavior: "smooth"
         });
@@ -712,183 +1461,61 @@
 
 
     /* ========================= */
-    /* MEMORY PHOTOS + MESSAGES */
+    /* MEMORY DATA */
     /* ========================= */
-
 
     const memories = [
 
+
       {
-        photo: "IMG-20231123-WA0066.jpg",
+
+        photo:
+          "IMG-20231123-WA0066.jpg",
 
         message:
-        "18 years of your life, and so many beautiful moments already written. May this be the beginning of your most wonderful chapter yet. ♡"
+          "18 years of your life, and so many beautiful moments already written. May this be the beginning of your most wonderful chapter yet. ♡"
+
       },
 
 
       {
-        photo: "IMG-20240728-WA0012.jpg",
+
+        photo:
+          "IMG-20240728-WA0012.jpg",
 
         message:
-        "Some memories become precious simply because they were shared with someone special. I hope we make countless more together. 💜"
+          "Some memories become precious simply because they were shared with someone special. I hope we make countless more together. 💜"
+
       },
 
 
       {
-        photo: "IMG-20240728-WA0020.jpg",
+
+        photo:
+          "IMG-20240728-WA0020.jpg",
 
         message:
-        "You are stepping into adulthood today, but no matter how much you grow, you will always be the little sister who means so much to me. ♡"
+          "You are stepping into adulthood today, but no matter how much you grow, you will always be the little sister who means so much to me. ♡"
+
       },
 
 
       {
-        photo: "IMG-20241007-WA0043.jpg",
+
+        photo:
+          "IMG-20241007-WA0043.jpg",
 
         message:
-        "May the girl in this picture always keep that beautiful smile, even when life gets difficult. You deserve every reason to smile. ✨"
+          "May the girl in this picture always keep that beautiful smile, even when life gets difficult. You deserve every reason to smile. ✨"
+
       },
 
 
       {
-        photo: "IMG-20241007-WA0047.jpg",
+
+        photo:
+          "IMG-20241007-WA0047.jpg",
 
         message:
-        "18 is not just a number. It is the beginning of new dreams, new adventures and a beautiful journey that is completely yours. 🌸"
-      },
-
-
-      {
-        photo: "IMG-20241008-WA0009.jpg",
-
-        message:
-        "Years from now, I hope we look back at these pictures and smile at how far we came—and remember how beautiful these days were. 💕"
-      },
-
-
-      {
-        photo: "IMG-20260714-WA0007.jpg",
-
-        message:
-        "Wherever life takes you, I hope you always remember that you have someone cheering for you, believing in you and loving you. 💜"
-      },
-
-
-      {
-        photo: "IMG_20260914_153341.jpg",
-
-        message:
-        "And here you are… 18. May the woman you become always be proud of the girl you were. Happy 18th birthday, Pragna. 🎂♡"
-      }
-
-    ];
-
-
-    let currentMemory = 0;
-
-
-    function updateMemory() {
-
-      document.getElementById("memoryPhoto").src =
-        memories[currentMemory].photo;
-
-
-      document.getElementById("memoryMessage").innerHTML =
-        memories[currentMemory].message;
-
-
-      document.getElementById("memoryCount").innerHTML =
-        "Memory " +
-        (currentMemory + 1) +
-        " of " +
-        memories.length;
-
-    }
-
-
-    function nextMemory() {
-
-      currentMemory++;
-
-      if (currentMemory >= memories.length) {
-
-        currentMemory = 0;
-
-      }
-
-      updateMemory();
-
-    }
-
-
-    function previousMemory() {
-
-      currentMemory--;
-
-      if (currentMemory < 0) {
-
-        currentMemory = memories.length - 1;
-
-      }
-
-      updateMemory();
-
-    }
-
-
-    /* ========================= */
-    /* FINAL SURPRISE */
-    /* ========================= */
-
-
-    function showMessage() {
-
-      document.getElementById("message").style.display =
-        "block";
-
-
-      for(let i = 0; i < 70; i++) {
-
-        let heart =
-          document.createElement("div");
-
-
-        heart.className =
-          "heart";
-
-
-        heart.innerHTML =
-          Math.random() > 0.5
-          ? "♡"
-          : "♥";
-
-
-        heart.style.left =
-          Math.random() * 100 + "vw";
-
-
-        heart.style.fontSize =
-          (12 + Math.random() * 20) + "px";
-
-
-        heart.style.animationDuration =
-          (5 + Math.random() * 5) + "s";
-
-
-        document.body.appendChild(heart);
-
-
-        setTimeout(
-          () => heart.remove(),
-          10000
-        );
-
-      }
-
-    }
-
-  </script>
-
-
-</body>
-</html>
+          "18 is not        
+    
